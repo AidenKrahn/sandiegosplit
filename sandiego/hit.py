@@ -28,7 +28,7 @@ def hint(country, witwics):
 def antihint(witwics):
     crazy = random.randint(1, 13)
     if crazy == witwics[1]:
-        antihint()
+        antihint(witwics)
     
     elif crazy == 1:
         print("Carmen Sandiego is not in Bolivia")
