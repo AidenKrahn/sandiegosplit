@@ -1,5 +1,4 @@
 
-
 #---------------------
 #Carmen Sandiego
 #Aiden Krahn
@@ -18,14 +17,14 @@ from sandiego import hit
 #definitions
 
 def event(location, witwics):
-    if location == witwics:
+    if location[1] == witwics[1]:
         print("After searching around, you managed to track down a criminal hiding in an abandoned building...")
         print("It was Carmen Sandiego!")
         print("Now that you caught her, you can go home and eat cake*.")
         print("*cake not provided")
         play = False
         #whether or not you catch Carmen Sandiego
-    elif location != witwics:
+    elif location[1] != witwics[1]:
         print("After searching around, you managed to track down a criminal hiding in an abandoned building...")
         print("It was an impostor! (sus)")
         print("You caught the impostor, and now they agreed to give you a hint to Carmen's whereabouts...")
@@ -85,7 +84,6 @@ def fly1(coward):
     return location
 
         
-        
 #main code---
 coolerdaniel = random.randint(0, 12)
 location = blsp.listofcountriespart2[coolerdaniel]
@@ -96,7 +94,7 @@ location = blsp.listofcountriespart2[coolerdaniel]
 #how much information they give(lots, not much, and cannonball)
 #what kind of information they give(so I don't have to write 5000 sentences, just 100.
 #flag hints, location based, political specifics, population
-def main():
+def main(location):
     print("Carmen Sandiego is somewhere in South America!")
     print("It is your job as a detective to find clues about Carmen Sandiego's whereabouts.")
     print("She could be hiding in", blsp.listofcountries)
@@ -122,7 +120,7 @@ def main():
             #flying to different countries
             if action == "bolivia":
                 print("You flew to Bolivia")
-                fly1(blsp.bolivia)
+                location = fly1(blsp.bolivia)
                 days = days - blsp.bolivia[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -130,7 +128,7 @@ def main():
                 
             elif action == 'argentina':
                 print("You flew to Argentina")
-                fly1(blsp.argentina)
+                location = fly1(blsp.argentina)
                 days = days - blsp.argentina[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -138,7 +136,7 @@ def main():
                 
             elif action == 'ecuador':
                 print("You flew to Ecuador")
-                fly1(blsp.ecuador)
+                location = fly1(blsp.ecuador)
                 days = days - blsp.ecuador[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -146,7 +144,7 @@ def main():
                 
             elif action == 'brazil':
                 print("You flew to Brazil")
-                fly1(blsp.brazil)
+                location = fly1(blsp.brazil)
                 days = days - blsp.brazil[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -154,7 +152,7 @@ def main():
                 
             elif action == 'suriname':
                 print("You flew to Suriname")
-                fly1(blsp.suriname)
+                location = fly1(blsp.suriname)
                 days = days - blsp.suriname[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -162,7 +160,7 @@ def main():
                 
             elif action == 'frenchguiana':
                 print("You flew to French Guiana")
-                fly1(blsp.frenchguiana)
+                location = fly1(blsp.frenchguiana)
                 days = days - blsp.frenchguiana[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -170,7 +168,7 @@ def main():
                 
             elif action == 'guyana':
                 print("You flew to Guyana")
-                fly1(blsp.guyana)
+                location = fly1(blsp.guyana)
                 days = days - blsp.guyana[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -178,7 +176,7 @@ def main():
                 
             elif action == 'chile':
                 print("You flew to Chile")
-                fly1(blsp.chile)
+                location = fly1(blsp.chile)
                 days = days - blsp.chile[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -186,7 +184,7 @@ def main():
                 
             elif action == 'peru':
                 print("You flew to Peru")
-                fly1(blsp.peru)
+                location = fly1(blsp.peru)
                 days = days - blsp.peru[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -194,7 +192,7 @@ def main():
                 
             elif action == 'paraguay':
                 print("You flew to Paraguay")
-                fly1(blsp.paraguay)
+                location = fly1(blsp.paraguay)
                 days = days - blsp.paraguay[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -202,7 +200,7 @@ def main():
                 
             elif action == 'uruguay':
                 print("You flew to Uruguay")
-                fly1(blsp.uruguay)
+                location = fly1(blsp.uruguay)
                 days = days - blsp.uruguay[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -210,7 +208,7 @@ def main():
                 
             elif action == 'venezuela':
                 print("You flew to Venezuela")
-                fly1(blsp.venezuela)
+                location = fly1(blsp.venezuela)
                 days = days - blsp.venezuela[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -218,7 +216,7 @@ def main():
                 
             elif action == 'colombia':
                 print("You flew to Colombia")
-                fly1(blsp.colombia)
+                location = fly1(blsp.colombia)
                 days = days - blsp.colombia[0]
                 geo.geographygarble(location)
                 print(f"Days Left =", days)
@@ -231,4 +229,6 @@ def main():
             print("You're homeless. A dog peed on you.")
             print("Better luck next time!")
             play = False
-main()
+
+
+main(location)
